@@ -1,19 +1,19 @@
 import express from "express";
-import axios from "axios";
+import api from './api/index'
+import bodyParser from "body-parser";
 const app = express();
 const port = 3333;
+
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 // define a route handler for the default home page
 app.get( "/", ( req, res ) => {
     // render the index template
     res.send( "index" );
-} );
+});
 
-app.get( "/test", async ( req, res ) => {
-    // render the index template
-    const response = await axios.post('http://localhost:3334/example', JSON.stringify({'test': 'skeleton'}))
-    res.send( response.data );
-} );
+app.use(api)
 
 // start the express server
 app.listen( port, () => {

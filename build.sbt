@@ -17,6 +17,7 @@ lazy val root = (project in file("."))
       "dev.zio" %% "zio-test" % zioVersion, // adding zio-test in the regular scope, because zio-prelude and zio-magic depend on it
       "dev.zio" %% "zio-logging" % zioLoggingVersion,
       "dev.zio" %% "zio-logging-slf4j" % zioLoggingVersion,
+      "dev.zio" %% "zio-json" % "0.2.0",
       "io.d11" %% "zhttp" % "1.0.0.0-RC27",
       "com.softwaremill.sttp.client3" %% "httpclient-backend-zio1" % sttpVersion,
       "com.softwaremill.sttp.client3" %% "circe" % sttpVersion
